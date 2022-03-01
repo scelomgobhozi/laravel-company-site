@@ -9,6 +9,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 
+
 class CategoryController extends Controller
 {
     public function AllCat(){
@@ -24,12 +25,12 @@ class CategoryController extends Controller
         'category_name.required'=>'Please input Category Name',
         'category_name.max' => 'Category Less Then 255Chars' ,
     ]);
-    category:: insert([
-        'category_name' => $request->category_name,
-        'user_id' => Auth::user()->id,
-        'created_at'=>Carbon::now()
-    ]);
+    category::insert([
+       'category_name' => $request->category_name,
+       'user_id' => Auth::user()->id,
+       'created_at'=>Carbon::now(),
+   ]);
 
-
+    return Redirect()->back()->with('success','Category inserted Successfull');
     }
 }

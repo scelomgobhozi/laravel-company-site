@@ -10,8 +10,14 @@
      
      <div class="container">
          <div class="row">
+
         <div class="col-md-8">
           <div class="card">
+          @if(session('success'))
+          <div class="alert alert-success" role="alert">
+           {{session('success')}}
+         </div>
+         @endif;
              <div class="card-header"> All Category </div>
           
 
